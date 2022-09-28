@@ -1,3 +1,4 @@
+from unicodedata import name
 from wallstreet import Stock, Call, Put
 import datetime
 
@@ -24,7 +25,7 @@ class StockPriceChecker:
     def get_price_of_instrument(self): 
         stock_name = input("What is the stock? ")  
         stock_price = Stock(stock_name)
-        return stock_price.price
+        return f'Hiii {self.first_name}, the price of {stock_name} is {stock_price.price} at {datetime.datetime.now()}'
 
 
 
@@ -33,4 +34,6 @@ class StockPriceChecker:
 
 
 First_Trader = StockPriceChecker("John","Doe")
-print(First_Trader.get_price_of_instrument())
+
+if __name__ == "__main__":
+    print(First_Trader.get_price_of_instrument())
